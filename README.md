@@ -27,5 +27,5 @@
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/yourusername/study-buddy.git
+git clone https://github.com/Carloalalan08/study-buddy.git
 cd study-buddy
