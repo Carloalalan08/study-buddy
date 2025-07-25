@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Buddy</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header>
+    <h1> Study Buddy</h1>
+    <p id="quote">"Motivation goes here..."</p>
+  </header>
+
+  <main>
+    <section id="todo-section">
+      <h2> To-Do List</h2>
+      <ul id="todo-list"></ul>
+      <input type="text" id="todo-input" placeholder="New task..." />
+      <button id="add-todo">Add Task</button>
+    </section>
+
+    <section id="timer-section">
+      <h2> Pomodoro Timer</h2>
+      <div id="timer">25:00</div>
+      <button id="start-timer">Start</button>
+      <button id="reset-timer">Reset</button>
+    </section>
+
+    <section id="explain-section">
+      <h2> Explain This</h2>
+      <input type="text" id="explain-input" placeholder="Type a word or topic..." />
+      <button id="explain-btn">Explain</button>
+      <p id="explanation"></p>
+    </section>
+
+    <section id="score-section">
+      <h2> Productivity Score</h2>
+      <p id="productivity-score">Score: 0</p>
+    </section>
+  </main>
+
+  <script src="scripts/quotes.js" type="module"></script>
+  <script src="scripts/todos.js" type="module"></script>
+  <script src="scripts/studyTimer.js" type="module"></script>
+  <script src="scripts/explain.js" type="module"></script>
+</body>
+</html>
