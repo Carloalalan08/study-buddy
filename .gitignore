@@ -1,0 +1,24 @@
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Node modules (only if you use npm later)
+node_modules/
+
+# Logs
+*.log
+
+# Build output (if using Vite, Parcel, etc.)
+dist/
+build/
+
+# Env files
+.env
+
+# Editor folders
+.vscode/
+.idea/
+*.code-workspace
+
+# Cache
+.cache/
