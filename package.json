@@ -1,0 +1,25 @@
+{
+  "name": "study-buddy",
+  "version": "1.0.0",
+  "description": "**Study Buddy** is a productivity-focused student web app that helps learners stay organized and motivated. It combines motivational quotes, task tracking, Pomodoro-style study sessions, and AI-powered topic explanations.",
+  "main": "vite.config.js",
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carloalalan08/study-buddy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carloalalan08/study-buddy/issues"
+  },
+  "homepage": "https://github.com/Carloalalan08/study-buddy#readme",
+  "devDependencies": {
+    "vite": "^7.0.6"
+  }
+}

@@ -1,59 +1,16 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Study Buddy</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  <header>
-    <h1> Study Buddy</h1>
-    <div class="quote-box">
-      <p id="quote">Loading quote...</p>
-      <p id="author"></p>
-    </div>
-  </header>
-
-  <main>
-    <!-- To-Do List Section -->
-    <section id="todo-section">
-      <h2> To-Do List</h2>
-      <ul id="todo-list"></ul>
-      <input type="text" id="todo-input" placeholder="New task..." />
-      <button id="add-todo">Add Task</button>
-    </section>
-
-    <!-- Pomodoro Timer Section -->
-    <section id="timer-section">
-      <h2> Pomodoro Timer</h2>
-      <div id="timer">25:00</div>
-      <button id="start-timer">Start</button>
-      <button id="reset-timer">Reset</button>
-    </section>
-
-    <!-- Explain This Section -->
-    <section id="explain-section">
-      <h2> Explain This</h2>
-      <input type="text" id="explain-input" placeholder="Type a word or topic..." />
-      <button id="explain-btn">Explain</button>
-      <p id="explanation"></p>
-    </section>
-
-    <!-- Productivity Score Section -->
-    <section id="score-section">
-      <h2> Productivity Score</h2>
-      <p id="productivity-score">Score: 0</p>
-    </section>
-  </main>
-
-  <!-- JavaScript Modules -->
-  <script type="module" src="js/quotes.js"></script>
-  <script type="module" src="js/todos.js"></script>
-  <script type="module" src="js/studyTimer.js"></script>
-  <script type="module" src="js/explain.js"></script>
+  <div id="app">Loading app...</div>
+  <script type="module" src="/src/js/main.js"></script>
 </body>
 
 </html>
