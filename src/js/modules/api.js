@@ -1,15 +1,11 @@
-export async function fetchQuote() {
+export async function fetchJoke() {
   try {
-    const res = await fetch(
-      'https://api.allorigins.win/get?disableCache=true&url=' +
-        encodeURIComponent('https://zenquotes.io/api/random')
-    );
-    const data = await res.json();
-    const parsed = JSON.parse(data.contents);
-    return `${parsed[0].q} — ${parsed[0].a}`;
+    const response = await fetch('https://api.chucknorris.io/jokes/random');
+    const data = await response.json();
+    return data.value;
   } catch (error) {
-    console.error('Quote fetch failed:', error);
-    return "Stay motivated. You've got this! — Study Buddy";
+    console.error('Joke fetch failed:', error);
+    return 'Oops! Chuck Norris roundhouse-kicked the internet. Try again!';
   }
 }
 
