@@ -1,6 +1,6 @@
-/* ----------------------------------------------
+/* --------------------------------------------------
   Root Variables (Color Palette & Typography)
----------------------------------------------- */
+-------------------------------------------------- */
 :root {
   --color-bg: #fefae0;
   --color-section: #e9edc9;
@@ -21,20 +21,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ----------------------------------------------
-  Base Layout
----------------------------------------------- */
+/* --------------------------------------------------
+  Base Layout & Body
+-------------------------------------------------- */
 body {
   margin: 0;
   padding: 0;
   background-color: var(--color-bg);
   color: var(--color-text);
-  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   justify-content: center;
 }
 
 #app {
+  flex: 1;
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -44,20 +46,69 @@ body {
   box-sizing: border-box;
 }
 
-/* ----------------------------------------------
-  Section Styling
----------------------------------------------- */
+/* --------------------------------------------------
+  Header & Footer
+-------------------------------------------------- */
+header,
+footer {
+  background-color: var(--color-section);
+  padding: 1rem;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+footer {
+  margin-top: auto;
+  border-top: 1px solid var(--color-border);
+}
+
+/* --------------------------------------------------
+  Logo & Branding
+-------------------------------------------------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.logo-right img {
+  width: 30px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(22%) sepia(18%) saturate(649%)
+    hue-rotate(346deg) brightness(92%) contrast(93%);
+}
+
+.highlight {
+  color: var(--color-heading);
+  font-weight: bold;
+}
+
+/* --------------------------------------------------
+  Sections
+-------------------------------------------------- */
 section {
   background-color: var(--color-section);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
-/* ----------------------------------------------
+/* --------------------------------------------------
   Typography
----------------------------------------------- */
+-------------------------------------------------- */
 h1,
 h2,
 h3 {
@@ -80,13 +131,13 @@ a:hover {
   color: var(--color-button-hover);
 }
 
-/* ----------------------------------------------
+/* --------------------------------------------------
   Buttons
----------------------------------------------- */
+-------------------------------------------------- */
 button {
   display: inline-block;
-  margin-right: 1rem;
   margin-top: 1rem;
+  margin-right: 1rem;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -111,9 +162,27 @@ button:focus-visible {
   box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.3);
 }
 
-/* ----------------------------------------------
+/* --------------------------------------------------
+  Section Title Icons
+-------------------------------------------------- */
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  filter: brightness(0) saturate(100%) invert(22%) sepia(18%) saturate(649%)
+    hue-rotate(346deg) brightness(92%) contrast(93%);
+}
+
+.icon-small {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+/* --------------------------------------------------
   To-Do List
----------------------------------------------- */
+-------------------------------------------------- */
 #todo-list li {
   margin: 0.75rem 0;
   display: flex;
@@ -138,60 +207,15 @@ button:focus-visible {
   opacity: 0.7;
 }
 
+/* Buttons inside To-Do Items */
 .done-btn,
 .remove-btn {
-  margin-left: 10px;
-  cursor: pointer;
   background: none;
   border: none;
-  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
-/* ─────────────────────────────────────
-   Header & Banner
-───────────────────────────────────── */
-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.main-logo {
-  width: 40px;
-  height: 40px;
-}
-
-.banner img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-}
-
-/* ─────────────────────────────────────
-   Section Icons
-───────────────────────────────────── */
-/* ─────────────────────────────────────
-   Section Title Icons
-───────────────────────────────────── */
-.icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  filter: brightness(0) saturate(100%) invert(22%) sepia(18%) saturate(649%) hue-rotate(346deg) brightness(92%) contrast(93%);
-  /* This filter matches --color-heading (#49392c) */
-}
-
-.icon-small {
-  width: 1rem;
-  height: 1rem;
-  vertical-align: middle;
-}
-
-/* ─────────────────────────────────────
-   To-Do List Icons
-───────────────────────────────────── */
 .done-btn img,
 .remove-btn img {
   width: 18px;
@@ -199,17 +223,9 @@ header {
   pointer-events: none;
 }
 
-.done-btn,
-.remove-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-/* ----------------------------------------------
+/* --------------------------------------------------
   Responsive Design
----------------------------------------------- */
+-------------------------------------------------- */
 @media (max-width: 768px) {
   #app {
     padding: 1rem;
@@ -220,7 +236,6 @@ header {
   }
 
   button {
-    margin-top: 1rem;
     width: 100%;
   }
 }
