@@ -1,3 +1,6 @@
+/* ----------------------------------------------
+  Root Variables (Color Palette & Typography)
+---------------------------------------------- */
 :root {
   --color-bg: #fefae0;
   --color-section: #e9edc9;
@@ -18,6 +21,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ----------------------------------------------
+  Base Layout
+---------------------------------------------- */
 body {
   margin: 0;
   padding: 0;
@@ -38,6 +44,9 @@ body {
   box-sizing: border-box;
 }
 
+/* ----------------------------------------------
+  Section Styling
+---------------------------------------------- */
 section {
   background-color: var(--color-section);
   padding: 2rem;
@@ -46,6 +55,9 @@ section {
   border: 1px solid var(--color-border);
 }
 
+/* ----------------------------------------------
+  Typography
+---------------------------------------------- */
 h1,
 h2,
 h3 {
@@ -57,6 +69,20 @@ p {
   color: var(--color-text);
 }
 
+a {
+  font-weight: 500;
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-button-hover);
+}
+
+/* ----------------------------------------------
+  Buttons
+---------------------------------------------- */
 button {
   display: inline-block;
   margin-right: 1rem;
@@ -85,6 +111,9 @@ button:focus-visible {
   box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.3);
 }
 
+/* ----------------------------------------------
+  To-Do List
+---------------------------------------------- */
 #todo-list li {
   margin: 0.75rem 0;
   display: flex;
@@ -94,18 +123,33 @@ button:focus-visible {
   padding-bottom: 0.5rem;
 }
 
-a {
-  font-weight: 500;
-  color: var(--color-link);
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  margin: 5px 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
-a:hover {
-  color: var(--color-button-hover);
+.done {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
 }
 
-/* Responsive adjustments */
+.done-btn,
+.remove-btn {
+  margin-left: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
+
+/* ----------------------------------------------
+  Responsive Design
+---------------------------------------------- */
 @media (max-width: 768px) {
   #app {
     padding: 1rem;

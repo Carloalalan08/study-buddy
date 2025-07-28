@@ -7,20 +7,41 @@ const todoList = document.getElementById('todo-list');
 function addTodo(text) {
   const li = document.createElement('li');
   li.textContent = text;
+  li.classList.add('todo-item');
 
-  const btn = document.createElement('button');
-  btn.textContent = '✓';
-  btn.addEventListener('click', () => {
-    li.remove();
-    updateScore(1);
+  // Done/Undone toggle button
+  const doneBtn = document.createElement('button');
+  doneBtn.textContent = '✓';
+  doneBtn.classList.add('done-btn');
+
+  let isDone = false;
+
+  doneBtn.addEventListener('click', () => {
+    isDone = !isDone;
+    li.classList.toggle('done', isDone);
+    updateScore(isDone ? 1 : -1); // +1 for done, -1 for undone
   });
 
-  li.appendChild(btn);
+  // Optional Remove button
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = '🗑️';
+  removeBtn.classList.add('remove-btn');
+
+  removeBtn.addEventListener('click', () => {
+    if (isDone) updateScore(-1); // If removing a completed task, subtract from score
+    li.remove();
+  });
+
+  li.appendChild(doneBtn);
+  li.appendChild(removeBtn);
   todoList.appendChild(li);
 }
 
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  addTodo(todoInput.value);
+  const task = todoInput.value.trim();
+  if (!task) return;
+
+  addTodo(task);
   todoInput.value = '';
 });
