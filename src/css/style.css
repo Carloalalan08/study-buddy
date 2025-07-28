@@ -1,0 +1,122 @@
+:root {
+  --color-bg: #FEFAE0;
+  --color-section: #E9EDC9;
+  --color-text: #77625C;
+  --color-heading: #49392C;
+  --color-border: #CCD5AE;
+  --color-button-bg: #FAEDCD;
+  --color-button-border: #D4A373;
+  --color-button-hover: #D4A373;
+  --color-button-text: #49392C;
+  --color-link: #D4A373;
+
+  font-family: 'Segoe UI', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+section {
+  background-color: var(--color-section);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-heading);
+  margin-top: 0;
+}
+
+p {
+  color: var(--color-text);
+}
+
+button {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-button-text);
+  background-color: var(--color-button-bg);
+  border: 2px solid var(--color-button-border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-button-hover);
+  color: white;
+  border-color: var(--color-button-hover);
+  box-shadow: 0 4px 12px rgba(212, 163, 115, 0.4);
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.3);
+}
+
+#todo-list li {
+  margin: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 0.5rem;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-button-hover);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #app {
+    padding: 1rem;
+  }
+
+  section {
+    padding: 1.25rem;
+  }
+
+  button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
