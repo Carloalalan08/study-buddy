@@ -1,4 +1,6 @@
 import { updateScore } from './productivity.js';
+import checkIcon from '../assets/icons/check-square.svg';
+import trashIcon from '../assets/icons/trash.svg';
 
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
@@ -11,8 +13,13 @@ function addTodo(text) {
 
   // Done/Undone toggle button
   const doneBtn = document.createElement('button');
-  doneBtn.textContent = '✓';
   doneBtn.classList.add('done-btn');
+
+  const checkImg = document.createElement('img');
+  checkImg.src = checkIcon;
+  checkImg.alt = 'Done';
+  checkImg.classList.add('icon-small');
+  doneBtn.appendChild(checkImg);
 
   let isDone = false;
 
@@ -22,10 +29,15 @@ function addTodo(text) {
     updateScore(isDone ? 1 : -1); // +1 for done, -1 for undone
   });
 
-  // Optional Remove button
+  // Remove button
   const removeBtn = document.createElement('button');
-  removeBtn.textContent = '🗑️';
   removeBtn.classList.add('remove-btn');
+
+  const trashImg = document.createElement('img');
+  trashImg.src = trashIcon;
+  trashImg.alt = 'Remove';
+  trashImg.classList.add('icon-small');
+  removeBtn.appendChild(trashImg);
 
   removeBtn.addEventListener('click', () => {
     if (isDone) updateScore(-1); // If removing a completed task, subtract from score
