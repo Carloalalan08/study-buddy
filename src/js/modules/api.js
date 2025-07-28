@@ -1,17 +1,16 @@
 export async function fetchQuote() {
   try {
     const res = await fetch(
-      'https://api.allorigins.win/get?url=' + encodeURIComponent('https://zenquotes.io/api/random')
+      'https://api.allorigins.win/get?disableCache=true&url=' + encodeURIComponent('https://zenquotes.io/api/random')
     );
     const data = await res.json();
     const parsed = JSON.parse(data.contents);
     return `${parsed[0].q} — ${parsed[0].a}`;
   } catch (error) {
     console.error('Quote fetch failed:', error);
-    return "Keep going. You've got this! — Study Buddy";
+    return "Stay motivated. You've got this! — Study Buddy";
   }
 }
-
 
 export async function fetchExplanation(word) {
   try {
