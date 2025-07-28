@@ -19,7 +19,7 @@ function addTodo(text) {
   todoList.appendChild(li);
 }
 
-todoForm.addEventListener('submit', e => {
+todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
   addTodo(todoInput.value);
   todoInput.value = '';

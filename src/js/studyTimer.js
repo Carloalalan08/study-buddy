@@ -8,7 +8,9 @@ let countdown;
 let time = 25 * 60;
 
 function displayTime() {
-  const mins = Math.floor(time / 60).toString().padStart(2, '0');
+  const mins = Math.floor(time / 60)
+    .toString()
+    .padStart(2, '0');
   const secs = (time % 60).toString().padStart(2, '0');
   timerEl.textContent = `${mins}:${secs}`;
 }

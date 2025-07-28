@@ -1,7 +1,8 @@
 export async function fetchQuote() {
   try {
     const res = await fetch(
-      'https://api.allorigins.win/get?disableCache=true&url=' + encodeURIComponent('https://zenquotes.io/api/random')
+      'https://api.allorigins.win/get?disableCache=true&url=' +
+        encodeURIComponent('https://zenquotes.io/api/random')
     );
     const data = await res.json();
     const parsed = JSON.parse(data.contents);
@@ -14,11 +15,13 @@ export async function fetchQuote() {
 
 export async function fetchExplanation(word) {
   try {
-    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+    const res = await fetch(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+    );
     const data = await res.json();
 
-    if (data.title === "No Definitions Found") {
-      return "No definition found.";
+    if (data.title === 'No Definitions Found') {
+      return 'No definition found.';
     }
 
     const definitions = data[0].meanings[0].definitions;

@@ -1,14 +1,14 @@
 :root {
-  --color-bg: #FEFAE0;
-  --color-section: #E9EDC9;
-  --color-text: #77625C;
-  --color-heading: #49392C;
-  --color-border: #CCD5AE;
-  --color-button-bg: #FAEDCD;
-  --color-button-border: #D4A373;
-  --color-button-hover: #D4A373;
-  --color-button-text: #49392C;
-  --color-link: #D4A373;
+  --color-bg: #fefae0;
+  --color-section: #e9edc9;
+  --color-text: #77625c;
+  --color-heading: #49392c;
+  --color-border: #ccd5ae;
+  --color-button-bg: #faedcd;
+  --color-button-border: #d4a373;
+  --color-button-hover: #d4a373;
+  --color-button-text: #49392c;
+  --color-link: #d4a373;
 
   font-family: 'Segoe UI', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.6;
